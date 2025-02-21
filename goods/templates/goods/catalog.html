@@ -54,13 +54,13 @@
             <img src="{% static "deps/images/Not found image.png" %}" class="card-img-top" alt="...">
             {% endif %}
             <div class="card-body">
-                <a href="../goods/product.html">
+                <a href="{% url "catalog:product" product.slug %}">
                     <p class="card-title">{{ product.name }}</p>
                 </a>
                 <p class="card-text text-truncate">{{ product.decription }}</p>
                 <p class="product_id">id: {{ product.display_id }}</p>
                 <div class="d-flex justify-content-between">
-                    {% if product.discount %}
+                    {%  if product.discount %}
                     <p><s>{{ product.price }}</s> $</p>
                     <p><strong>{{ product.sell_price }} $</strong></p>
                     <span class="badge bg-warning text-dark">Скидка {{ product.discount }}%</span> 
